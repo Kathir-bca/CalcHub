@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">🧮 <span>Calculator Hub</span></div>
+    <button id="themeBtn" class="theme-btn">🌙</button>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>🧮 Calculator Hub</h1>
+        <p>Smart calculators for Scientific, Finance and Student needs.</p>
+    </section>
+
+    <div class="categories">
+        <button class="category-btn active" data-category="all">✨ All</button>
+        <button class="category-btn" data-category="scientific">🔬 Scientific</button>
+        <button class="category-btn" data-category="finance">💰 Finance</button>
+        <button class="category-btn" data-category="student">🎓 Student</button>
+    </div>
+
+    <section class="calculator-grid">
+
+        <div class="calculator-card" data-category="scientific">
+            <div class="card-icon">🔬</div>
+            <h2>Scientific Calculator</h2>
+            <p>Perform advanced mathematical calculations.</p>
+            <button onclick="openCalculator('scientific')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="finance">
+            <div class="card-icon">🏦</div>
+            <h2>EMI Calculator</h2>
+            <p>Calculate monthly loan EMI and total interest.</p>
+            <button onclick="openCalculator('emi')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="finance">
+            <div class="card-icon">💸</div>
+            <h2>GST Calculator</h2>
+            <p>Calculate GST amount and final price.</p>
+            <button onclick="openCalculator('gst')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="finance">
+            <div class="card-icon">🏷️</div>
+            <h2>Discount Calculator</h2>
+            <p>Calculate discount and final selling price.</p>
+            <button onclick="openCalculator('discount')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="finance">
+            <div class="card-icon">💼</div>
+            <h2>Salary Calculator</h2>
+            <p>Estimate your monthly take-home salary.</p>
+            <button onclick="openCalculator('salary')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="finance">
+            <div class="card-icon">📈</div>
+            <h2>Interest Calculator</h2>
+            <p>Calculate simple interest and total amount.</p>
+            <button onclick="openCalculator('interest')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="student">
+            <div class="card-icon">🎓</div>
+            <h2>CGPA Calculator</h2>
+            <p>Calculate CGPA from semester grades.</p>
+            <button onclick="openCalculator('cgpa')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="student">
+            <div class="card-icon">📝</div>
+            <h2>Marks Calculator</h2>
+            <p>Calculate total marks and percentage.</p>
+            <button onclick="openCalculator('marks')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="student">
+            <div class="card-icon">📚</div>
+            <h2>GPA Calculator</h2>
+            <p>Calculate GPA using grades and credits.</p>
+            <button onclick="openCalculator('gpa')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="scientific">
+            <div class="card-icon">%</div>
+            <h2>Percentage Calculator</h2>
+            <p>Quickly calculate percentages.</p>
+            <button onclick="openCalculator('percentage')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="scientific">
+            <div class="card-icon">📏</div>
+            <h2>Unit Converter</h2>
+            <p>Convert common units easily.</p>
+            <button onclick="openCalculator('unit')">Open Calculator →</button>
+        </div>
+
+        <div class="calculator-card" data-category="scientific">
+            <div class="card-icon">🎂</div>
+            <h2>Age Calculator</h2>
+            <p>Calculate your exact age.</p>
+            <button onclick="openCalculator('age')">Open Calculator →</button>
+        </div>
+
+    </section>
+
+    <section id="calculatorArea" class="calculator-area hidden">
+        <div class="calculator-header">
+            <h2 id="calculatorTitle">Calculator</h2>
+            <button onclick="closeCalculator()" class="close-btn">✕</button>
+        </div>
+        <div id="calculatorContent"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Calculator Hub | HTML • CSS • JavaScript</p>
+</footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
