@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/history.css">
 </head>
-<body>
+<body id="top">
 
 <header class="header">
     <div class="logo">🧮 <span>Calculator Hub</span></div>
@@ -31,91 +32,9 @@
         <button class="category-btn" data-category="student">🎓 Student</button>
     </div>
 
-    <section class="calculator-grid">
+    <section class="calculator-grid js-calculator-grid">
 
-        <div class="calculator-card" data-category="scientific">
-            <div class="card-icon">🔬</div>
-            <h2>Scientific Calculator</h2>
-            <p>Perform advanced mathematical calculations.</p>
-            <button onclick="openCalculator('scientific')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="finance">
-            <div class="card-icon">🏦</div>
-            <h2>EMI Calculator</h2>
-            <p>Calculate monthly loan EMI and total interest.</p>
-            <button onclick="openCalculator('emi')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="finance">
-            <div class="card-icon">💸</div>
-            <h2>GST Calculator</h2>
-            <p>Calculate GST amount and final price.</p>
-            <button onclick="openCalculator('gst')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="finance">
-            <div class="card-icon">🏷️</div>
-            <h2>Discount Calculator</h2>
-            <p>Calculate discount and final selling price.</p>
-            <button onclick="openCalculator('discount')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="finance">
-            <div class="card-icon">💼</div>
-            <h2>Salary Calculator</h2>
-            <p>Estimate your monthly take-home salary.</p>
-            <button onclick="openCalculator('salary')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="finance">
-            <div class="card-icon">📈</div>
-            <h2>Interest Calculator</h2>
-            <p>Calculate simple interest and total amount.</p>
-            <button onclick="openCalculator('interest')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="student">
-            <div class="card-icon">🎓</div>
-            <h2>CGPA Calculator</h2>
-            <p>Calculate CGPA from semester grades.</p>
-            <button onclick="openCalculator('cgpa')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="student">
-            <div class="card-icon">📝</div>
-            <h2>Marks Calculator</h2>
-            <p>Calculate total marks and percentage.</p>
-            <button onclick="openCalculator('marks')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="student">
-            <div class="card-icon">📚</div>
-            <h2>GPA Calculator</h2>
-            <p>Calculate GPA using grades and credits.</p>
-            <button onclick="openCalculator('gpa')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="scientific">
-            <div class="card-icon">%</div>
-            <h2>Percentage Calculator</h2>
-            <p>Quickly calculate percentages.</p>
-            <button onclick="openCalculator('percentage')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="scientific">
-            <div class="card-icon">📏</div>
-            <h2>Unit Converter</h2>
-            <p>Convert common units easily.</p>
-            <button onclick="openCalculator('unit')">Open Calculator →</button>
-        </div>
-
-        <div class="calculator-card" data-category="scientific">
-            <div class="card-icon">🎂</div>
-            <h2>Age Calculator</h2>
-            <p>Calculate your exact age.</p>
-            <button onclick="openCalculator('age')">Open Calculator →</button>
-        </div>
+       
 
     </section>
 
@@ -129,10 +48,60 @@
 
 </main>
 
-<footer>
-    <p>© 2026 Calculator Hub | HTML • CSS • JavaScript</p>
+<footer id="footer" class="site-footer">
+    <div class="footer-content">
+        <section class="footer-brand">
+            <a class="footer-logo" href="#top" aria-label="CalcHub home">🧮 CalcHub</a>
+            <p>Simple, reliable calculators for everyday finance, study, and science needs.</p>
+        </section>
+
+        <section class="footer-section">
+            <h2>Calculators</h2>
+            <ul>
+                <li><a href="#calculatorArea" onclick="openCalculator('scientific')">Scientific</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('emi')">EMI</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('gst')">GST</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('discount')">Discount</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('salary')">Salary</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('cgpa')">CGPA</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('gpa')">GPA</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('unit')">Unit Converter</a></li>
+                <li><a href="#calculatorArea" onclick="openCalculator('age')">Age Calculator</a></li>
+            </ul>
+        </section>
+
+        <section class="footer-section">
+            <h2>Features</h2>
+            <ul class="feature-list">
+                <li>⚡ Fast calculations</li>
+                <li>📱 Responsive design</li>
+                <li>🌙 Dark mode</li>
+                <li>💾 Calculation history</li>
+                <li>🔒 Privacy-focused</li>
+                <li>🆓 Free to use</li>
+            </ul>
+        </section>
+
+        <section class="footer-section">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#footer">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="#footer">Privacy Policy</a></li>
+                <li><a href="#footer">Terms</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CalcHub. All Rights Reserved.</p>
+        <p>Built with HTML • CSS • JavaScript</p>
+    </div>
 </footer>
 
-    <script src="scripts/app.js"></script>
+    <script src="scripts/app.js" type="module">
+
+    </script>
 </body>
 </html>

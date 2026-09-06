@@ -1,3 +1,19 @@
+import { calculators } from "./hub.js";
+import { initHistory, recordCalculation } from "./history.js";
+
+const container = document.querySelector(".calculator-grid");
+
+container.innerHTML = calculators.map((calculator) => `
+  <div class="calculator-card" data-category="${calculator.category}">
+    <div class="card-icon">${calculator.icon}</div>
+    <h2>${calculator.title}</h2>
+    <p>${calculator.description}</p>
+    <button onclick="openCalculator('${calculator.type}')">
+      Open Calculator →
+    </button>
+  </div>
+`).join("");
+window.openCalculator = openCalculator;
 // ===============================
 // SHARED DOM REFERENCES
 // ===============================
@@ -42,9 +58,17 @@ function input(id, label, type = "number", min = "", max = "") {
 }
 
 function showResult(message) {
-    document.getElementById("result").innerHTML = `
-        <div class="result">${message}</div>
-    `;
+    const result = document.getElementById("result");
+    result.innerHTML = `<div class="result">${message}</div>`;
+
+    const heading = result.querySelector("h3")?.textContent;
+    if (heading) {
+        const summary = result.textContent
+            .replace(heading, "")
+            .replace(/\s+/g, " ")
+            .trim();
+        recordCalculation(heading.replace(" Result", ""), summary);
+    }
 }
 
 function format(number) {
@@ -112,6 +136,7 @@ function calculate() {
     const display = document.getElementById("display");
     try {
         display.value = Function(`"use strict"; return (${display.value})`)();
+        recordCalculation("Scientific Calculator", `Result: ${display.value}`);
     } catch {
         display.value = "Error";
     }
@@ -120,21 +145,25 @@ function calculate() {
 function square() {
     const display = document.getElementById("display");
     display.value = Math.pow(Number(display.value), 2);
+    recordCalculation("Scientific Calculator", `Result: ${display.value}`);
 }
 
 function squareRoot() {
     const display = document.getElementById("display");
     display.value = Math.sqrt(Number(display.value));
+    recordCalculation("Scientific Calculator", `Result: ${display.value}`);
 }
 
 function sin() {
     const display = document.getElementById("display");
     display.value = Math.sin(Number(display.value) * Math.PI / 180);
+    recordCalculation("Scientific Calculator", `Result: ${display.value}`);
 }
 
 function cos() {
     const display = document.getElementById("display");
     display.value = Math.cos(Number(display.value) * Math.PI / 180);
+    recordCalculation("Scientific Calculator", `Result: ${display.value}`);
 }
 
 
@@ -181,7 +210,6 @@ function calculateEMI() {
         Total Interest: <strong>₹${format(interest)}</strong>
     `);
 }
-
 
 // ===============================
 // GST CALCULATOR
@@ -588,3 +616,29 @@ themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark", isDark);
     themeBtn.textContent = isDark ? "☀️" : "🌙";
 });
+
+Object.assign(window, {
+  openCalculator,
+  closeCalculator,
+  calculateEMI,
+  calculateGST,
+  calculateDiscount,
+  calculateSalary,
+  calculateInterest,
+  calculateCGPA,
+  calculateMarks,
+  calculateGPA,
+  calculatePercentage,
+  convertUnit,
+  calculateAge,
+  appendValue,
+  clearDisplay,
+  deleteLast,
+  calculate,
+  square,
+  squareRoot,
+  sin,
+  cos
+});
+
+initHistory();
