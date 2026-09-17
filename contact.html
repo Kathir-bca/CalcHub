@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Kathiravan, the developer of CalcHub.">
+<title>Contact | CalcHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+<style>
+.page { width: min(90%, 1000px); margin: 0 auto; padding: 64px 0 80px; }
+.page-hero { text-align: center; max-width: 720px; margin: 0 auto 44px; }
+.eyebrow { color: var(--primary); font-weight: 600; margin-bottom: 10px; }
+.page-hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 14px; }
+.page-hero p { color: var(--muted); line-height: 1.8; font-size: 17px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,.04); }
+.contact-card .icon { font-size: 30px; margin-bottom: 14px; }
+.contact-card h2 { margin-bottom: 10px; font-size: 20px; }
+.contact-card p { color: var(--muted); line-height: 1.75; }
+.contact-link { display: inline-block; margin-top: 18px; padding: 12px 18px; border-radius: 8px; background: var(--primary); color: white; text-decoration: none; font-weight: 600; }
+.contact-link:hover { background: var(--primary-dark); }
+.details { margin-top: 22px; display: grid; gap: 14px; }
+.detail { padding: 15px 16px; background: var(--background); border-radius: 10px; }
+.detail-label { display: block; color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.detail-value { color: var(--text); font-weight: 600; }
+.note { margin-top: 22px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+@media (max-width: 650px) { .page { padding: 44px 0 60px; } .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="index.html" aria-label="CalcHub home">🧮 <span>CalcHub</span></a>
+    <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+</header>
+
+<main class="page">
+    <section class="page-hero">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h1>Contact CalcHub</h1>
+        <p>Have feedback, found an issue, or have a suggestion for a useful calculator? Feel free to reach out.</p>
+    </section>
+
+    <section class="contact-grid">
+        <article class="contact-card">
+            <div class="icon">✉️</div>
+            <h2>Email</h2>
+            <p>The easiest way to contact the developer is by email. Include enough detail about your question, feedback, or issue so it can be understood clearly.</p>
+            <a class="contact-link" href="mailto:kathirg.ca@gmail.com">Email Kathiravan</a>
+        </article>
+
+        <article class="contact-card">
+            <div class="icon">👨‍💻</div>
+            <h2>Developer</h2>
+            <p>CalcHub is developed by Kathiravan and built with a focus on practical calculators, clean design, and a simple user experience.</p>
+            <a class="contact-link" href="https://github.com/Kathir-bca" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+        </article>
+    </section>
+
+    <section class="contact-card" style="margin-top:22px;">
+        <h2>Contact details</h2>
+        <div class="details">
+            <div class="detail"><span class="detail-label">Developer</span><span class="detail-value">Kathiravan</span></div>
+            <div class="detail"><span class="detail-label">Location</span><span class="detail-value">Kumbakonam, Tamil Nadu, India</span></div>
+            <div class="detail"><span class="detail-label">Email</span><span class="detail-value">kathirg.ca@gmail.com</span></div>
+        </div>
+        <p class="note">For calculator results or financial decisions, please remember that CalcHub provides calculations and general information; results should be checked when accuracy is important.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-bottom">
+        <p>© 2026 CalcHub. All Rights Reserved.</p>
+        <p>Built with HTML • CSS • JavaScript</p>
+    </div>
+</footer>
+
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const savedTheme = localStorage.getItem('calcHubTheme');
+if (savedTheme === 'dark') document.body.classList.add('dark');
+themeBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    themeBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('calcHubTheme', isDark ? 'dark' : 'light');
+});
+</script>
+</body>
+</html>
