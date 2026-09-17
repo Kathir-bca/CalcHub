@@ -45,6 +45,7 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: var(--primary);
+    text-decoration: none;
 }
 
 .theme-btn {
@@ -110,6 +111,7 @@ body {
 }
 
 .calculator-card {
+    display: grid;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
